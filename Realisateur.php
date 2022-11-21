@@ -28,6 +28,8 @@
 
                 public function afficherFilmographie(){
 
+                    echo "la filmographie de $this : <br>";
+
                     foreach ($this->_filmographie as $film){
                         echo $film->getTitre()."<br>";
                     }

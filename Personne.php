@@ -1,18 +1,20 @@
 <?php
 
-        Class Personne{
+        abstract Class Personne{
 
             protected string $_nom;
             protected string $_prenom;
             protected string $_sexe;
             protected DateTime $_naissance;
 
-            public function __construct($nom, $prenom, $sexe, $naissance){
+            public function __construct(string $nom, string $prenom, string $sexe, string $naissance){
 
                 $this->_nom = $nom;
                 $this->_prenom = $prenom;
                 $this->_sexe = $sexe;
-                $this->_naissance = $naissance;
+                $this->_naissance = new DateTime($naissance);
+
+                //Pour transformer string en DateTime - noter de maniere suivante: "Année - mois- jour//
             }
 
             public function getNom(){
@@ -54,6 +56,12 @@
             public function setNaissance($naissance){
 
                 $this->_naissance = $naissance ;
+            }
+
+            public function __toString(){
+
+                return "$this->_nom $this->_prenom";
+                
             }
 
         }

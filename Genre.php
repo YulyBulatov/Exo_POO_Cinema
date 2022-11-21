@@ -9,6 +9,7 @@
 
                 $this->_nomGenre = $nomGenre;
                 $this->_listedeFilms = [];
+                
 
             }
 
@@ -39,9 +40,16 @@
 
             public function afficherFilmsdeGenre(){
 
+                echo "Le genre $this->nomGenre est associé à: <br>";
+
                 foreach ($this->_listedeFilms as $film){
                     echo $film->getTitre()."<br>";
                 }
+            }
+
+            public function __toString()
+            {
+                return $this->_nomGenre;
             }
 
         }

@@ -11,3 +11,5 @@ spl_autoload_register(function ($class_name) {
     require_once $class_name . '.php';
 
 });
+
+$Star_Wars_IV = new Film("Star Wars: Episode IV - A New Hope", "1977-05-01","121 minutes",$Lucas = new Realisateur("Lucas", "George", "masculin", new DateTime(14/05/1944)),"La guerre civile fait rage entre l'Empire galactique et l'Alliance rebelle. Capturée par les troupes de choc de l'Empereur menées par le sombre et impitoyable Dark Vador, la princesse Leia Organa dissimule les plans de l'Etoile Noire.", $sf = new Genre("Science-fiction"));

@@ -28,9 +28,13 @@
 
                 public function afficherFilmographie(){
 
+                    echo "$this a joué dans : <br>";
+
                     foreach ($this->_filmographie as $film){
                         echo $film->getTitre()."<br>";
                     }
                 }
+
+                
 
         }

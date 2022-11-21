@@ -46,4 +46,10 @@
                     }
                 }
 
+                public function __toString(){
+
+                    return $this->_nomPersonnage ;
+                    
+                }
+
             }
