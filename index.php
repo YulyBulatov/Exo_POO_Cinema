@@ -73,7 +73,7 @@ $personnages_au_coeur_de_l_ocean = [$owen_chase, $matthew_joy];
 
 $casting_au_coeur_de_l_ocean = new Casting($au_coeur_de_l_ocean, $acteurs_au_coeur_de_l_ocean, $personnages_au_coeur_de_l_ocean);
 
-$Star_Wars_IV->getResume();
+echo $Star_Wars_IV->getResume();
 
 echo "<br>";
 
