@@ -56,10 +56,6 @@
                 return $this->_genre;
             }
             
-            public function getCasting(){
-
-                return $this->_casting;
-            }
             
             public function setTitre($titre){
 
@@ -91,18 +87,6 @@
             public function setGenre($genre){
 
                 $this->_genre = $genre;
-            }
-            
-            public function setCasting($casting){
-
-                $this->_casting = $casting;
-            }
-
-            public function listerCasting(){
-
-                foreach($this->_casting as $personnage=>$acteur){
-                    echo "$personnage interprété par $acteur <br>";
-                }
             }
 
             public function __toString()

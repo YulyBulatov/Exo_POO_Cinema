@@ -40,7 +40,7 @@
 
             public function afficherFilmsdeGenre(){
 
-                echo "Le genre $this->nomGenre est associé à: <br>";
+                echo "Le genre $this->_nomGenre est associé à: <br>";
 
                 foreach ($this->_listedeFilms as $film){
                     echo $film->getTitre()."<br>";

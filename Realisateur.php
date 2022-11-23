@@ -28,7 +28,7 @@
 
                 public function afficherFilmographie(){
 
-                    echo "la filmographie de $this : <br>";
+                    echo "La filmographie de $this : <br>";
 
                     foreach ($this->_filmographie as $film){
                         echo $film->getTitre()."<br>";
