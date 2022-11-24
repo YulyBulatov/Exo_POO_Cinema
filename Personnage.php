@@ -3,46 +3,50 @@
             Class Personnage{
 
                 private string $_nomPersonnage;
-                private array $_listeActeurs;
+                private array $_casting;
 
+  
                 public function __construct($nomPersonnage){
 
                     $this->_nomPersonnage = $nomPersonnage;
-                    $this->_listeActeurs = [];
+                    $this->_casting = [];
                 }
 
                 public function getNomPersonnage(){
 
                     return $this->_nomPersonnage;
                 }
-
-                public function getListeActeurs(){
-
-                    return print_r($this->_listeActeurs);
-                }
                 
+                public function getCasting(){
+
+                return $this->_casting;
+                }
+
                 public function setNomPersonnage($nomPersonnage){
                 
                     $this->_nomPersonnage = $nomPersonnage;
                 }
 
-                public function setListeActeurs($listeActeurs){
+                public function setCasting($casting){
 
-                    $this->_listeActeurs = $listeActeurs;
+                    $this->_casting = $casting;
                 }
+    
 
-                public function ajouterActeur($acteur){
 
-                    $this->_listeActeurs[] = $acteur;
+                public function ajouterCasting($casting){
+
+                    $this->_casting [] = $casting;
                 }
+    
 
                 public function afficherActeurs(){
 
                     echo "Le personnage $this->_nomPersonnage a été interpreté par : <br>";
 
-                    foreach ($this->_listeActeurs as $acteur){
+                    foreach ($this->_casting as $acteur){
 
-                        echo "$acteur <br>";
+                        echo $acteur->getActeur(). " dans le film ".$acteur->getFilm()." <br>";
                     }
                 }
 

@@ -9,6 +9,7 @@
             private Realisateur $_realistaeur;
             private string $_resume;
             private Genre $_genre;
+            private array $_casting;
 
             public function __construct(string $titre, string $datedesortie, int $duree, Realisateur $realisateur, string $resume, Genre $genre){
 
@@ -21,6 +22,7 @@
                 $this->_genre = $genre;
                 $realisateur->ajouterFilm($this);
                 $genre->ajouterFilm($this);
+                $this->_casting = [];
                
             }
 
@@ -56,6 +58,10 @@
                 return $this->_genre;
             }
             
+            public function getCasting(){
+
+                return $this->_casting;
+            }
             
             public function setTitre($titre){
 
@@ -87,6 +93,26 @@
             public function setGenre($genre){
 
                 $this->_genre = $genre;
+            }
+
+            public function setCasting($casting){
+
+                $this->_casting = $casting;
+            }
+
+            public function ajouterCasting($casting){
+
+                $this->_casting [] = $casting;
+            }
+
+            public function afficherCasting(){
+
+                echo "Dans le film $this->_titre : <br> ";
+
+                foreach ($this->_casting as $casting){
+
+                    echo $casting;
+                }
             }
 
             public function __toString()

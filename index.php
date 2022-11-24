@@ -25,10 +25,10 @@ $luke_Skywalker = new Personnage("Luke Skywalker");
 $han_Solo = new Personnage("Han Solo");
 $leia_Organa = new Personnage("Leia Organa");
 
-$acteurs_sw_IV = [$mark_hammil, $harrison_ford, $carrie_fisher];
-$personnages_sw_IV = [$luke_Skywalker, $han_Solo, $leia_Organa];
+$casting1_sw_IV = new Casting($Star_Wars_IV, $mark_hammil, $luke_Skywalker);
+$casting2_sw_IV = new Casting($Star_Wars_IV, $harrison_ford, $han_Solo);
+$casting3_sw_IV = new Casting($Star_Wars_IV, $carrie_fisher, $leia_Organa);
 
-$casting_sw_IV = new Casting($Star_Wars_IV, $acteurs_sw_IV, $personnages_sw_IV);
 
 $Howard = new Realisateur("Howard", "Ron", "masculin", "1954-03-01");
 
@@ -41,10 +41,9 @@ $donald_glover = new Acteur("Glover", "Donald", "masculin", "1983-09-25");
 $qi_ra = new Personnage("Qi'ra");
 $lando_calrissian = new Personnage("Lando Calrissian");
 
-$acteurs_Solo_sw = [$alden_ehrenreich, $emilia_clarke, $donald_glover];
-$personnages_Solo_sw = [$han_Solo, $qi_ra, $lando_calrissian];
-
-$casting_Solo_sw = new Casting($Solo_sw, $acteurs_Solo_sw, $personnages_Solo_sw);
+$casting1_Solo_sw = new Casting($Solo_sw, $alden_ehrenreich, $han_Solo);
+$casting2_Solo_sw = new Casting($Solo_sw, $emilia_clarke, $qi_ra);
+$casting3_Solo_sw = new Casting($Solo_sw, $donald_glover, $lando_calrissian);
 
 $drame = new Genre("Drame");
 
@@ -56,10 +55,8 @@ $chris_hemsworth = new Acteur("Hemsworth", "Chris", "masculin", "1983-10-11");
 $niki_lauda = new Personnage("Niki Lauda");
 $james_hunt = new Personnage("James Hunt");
 
-$acteurs_Rush = [$daniel_bruhl, $chris_hemsworth];
-$personnages_Rush = [$niki_lauda, $james_hunt];
-
-$casting_Rush = new Casting($Rush, $acteurs_Rush, $personnages_Rush);
+$casting1_Rush = new Casting($Rush, $daniel_bruhl, $niki_lauda);
+$casting2_Rush = new Casting($Rush, $chris_hemsworth, $james_hunt);
 
 $au_coeur_de_l_ocean = new Film ("Au cœur de l'océan", "2015-12-09", 121, $Howard, "The crew of a whaling ship encounter a huge albino bull sperm whale, which tests their resilience and beliefs. They are pushed to their limits to survive out there in the sea.", $drame);
 
@@ -68,10 +65,8 @@ $cillian_murphy = new Acteur("Murphy", "Cillian", "masculin", "1976-05-25");
 $owen_chase = new Personnage("Owen Chase");
 $matthew_joy = new Personnage("Matthew Joy");
 
-$acteurs_au_coeur_de_l_ocean = [$chris_hemsworth, $cillian_murphy];
-$personnages_au_coeur_de_l_ocean = [$owen_chase, $matthew_joy];
-
-$casting_au_coeur_de_l_ocean = new Casting($au_coeur_de_l_ocean, $acteurs_au_coeur_de_l_ocean, $personnages_au_coeur_de_l_ocean);
+$casting1_au_coeur_de_l_ocean = new Casting($au_coeur_de_l_ocean, $chris_hemsworth, $owen_chase);
+$casting2_au_coeur_de_l_ocean = new Casting($au_coeur_de_l_ocean, $cillian_murphy, $matthew_joy);
 
 echo $Star_Wars_IV->getResume();
 
@@ -81,7 +76,7 @@ $han_Solo->afficherActeurs();
 
 echo "<br>";
 
-$casting_sw_IV->afficherCasting();
+$Star_Wars_IV->afficherCasting();
 
 echo "<br>";
 

@@ -4,20 +4,17 @@
         Class Casting{
 
             private Film $_film;
-            private array $_acteurs;
-            private array $_personnages;
+            private Acteur $_acteur;
+            private Personnage $_personnage;
 
-            public function __construct(Film $film, array $acteurs, array $personnages){
+            public function __construct(Film $film, Acteur $acteur, Personnage $personnage){
 
                 $this->_film = $film;
-                $this->_acteurs = $acteurs;
-                $this->_personnages = $personnages;
-
-                for ($i = 0, $size = count($personnages); $i < $size; $i++){
-
-                    $personnages[$i]->ajouterActeur($acteurs[$i]);
-                    $acteurs[$i]->ajouterFilm($this->_film);
-                }
+                $film->ajouterCasting($this);
+                $this->_acteur = $acteur;
+                $acteur->ajouterCasting($this);
+                $this->_personnage = $personnage;
+                $personnage->ajouterCasting($this);
             }
 
             public function getFilm(){
@@ -25,14 +22,14 @@
                 return $this->_film;
             }
 
-            public function getActeurs(){
+            public function getActeur(){
 
-                return $this->_acteurs;
+                return $this->_acteur;
             }
 
-            public function getPersonnages(){
+            public function getPersonnage(){
 
-                return $this->_personnages;
+                return $this->_personnage;
             }
 
             public function setFilm($film){
@@ -40,24 +37,20 @@
                 $this->_film = $film;
             }
 
-            public function setActeurs($acteurs){
+            public function setActeur($acteur){
 
-                $this->_acteurs = $acteurs;
+                $this->_acteur = $acteur;
             }
 
-            public function setPersonnages($personnages){
+            public function setPersonnage($personnage){
 
-                $this->_personnages = $personnages;
+                $this->_personnage = $personnage;
             }
 
-            public function afficherCasting(){
-
-                echo "Dans  le  film $this->_film, <br> ";
-
-                for ($i = 0, $size = count($this->_personnages); $i < $size; $i++){
-
-                    echo $this->_personnages[$i]." a été incarné par " .$this->_acteurs[$i]." <br>";
-                }
+            public function __toString()
+            {
+                return $this->_personnage." a été incarné par " .$this->_acteur." <br>";
+                
             }
 
         }
